@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Primera App Web</title>
+  <style>
+    body { font-family: Arial; text-align: center; background-color: #f0f8ff; margin-top: 100px; }
+    input { padding: 10px; margin: 5px; font-size: 16px; }
+    button { padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer; }
+    p { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Mi App Web</h1>
+  <input type="text" id="nombre" placeholder="Escribe tu nombre">
+  <input type="number" id="edad" placeholder="Escribe tu edad"><br><br>
+  <button onclick="guardar()">Guardar Datos</button>
+  <button onclick="mostrar()">Mostrar Datos</button>
+  <p id="resultado"></p>
+
+  <script>
+    let datos = {}; // Aquí guardamos los datos temporalmente
+
+    function guardar() {
+      let nombre = document.getElementById('nombre').value;
+      let edad = document.getElementById('edad').value;
+      if(nombre && edad){
+        datos = {nombre: nombre, edad: edad};
+        document.getElementById('resultado').innerText = "Datos guardados correctamente.";
+      } else {
+        alert("Por favor, completa ambos campos.");
+      }
+    }
+
+    function mostrar() {
+      if(datos.nombre && datos.edad){
+        document.getElementById('resultado').innerText = Nombre: ${datos.nombre}, Edad: ${datos.edad};
+      } else {
+        document.getElementById('resultado').innerText = "No hay datos guardados.";
+      }
+    }
+  </script>
+</body>
+</html>
